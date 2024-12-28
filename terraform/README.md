@@ -199,6 +199,22 @@ The Output Of Igw and Rt
 <img width="796" alt="outputmarwan" src="https://github.com/user-attachments/assets/102bfbc9-c28f-43ac-a318-453224dadddf" />
 
 ---
+### Before Run the commands, to connect with Aws by using this command
+### Configure AWS CLI
+- Go to your AWS acoount `IAM` > `User` > Press on your IAM User > Choose `Security Credentials` tab > Navigate to `Create access key`
+- After Creating your access key execute the following command
+  ```bash
+  aws configure
+  ```
+- Insert the following entries
+  ```bash
+  AWS Access Key ID [None]: <your-access-key-id>
+  AWS Secret Access Key [None]: <your-secret-access-key>
+  Default region name [None]: us-east-1
+  Default output format [None]: json
+
+
+---
 
 ### After Creating the Terraform Modules run it using this commands
 ```bash
