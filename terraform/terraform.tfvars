@@ -36,5 +36,8 @@ ec2_name             = "ivolve"
 cloudwatch_log_group  = "log-group"
 cloudwatch_log_stream = "log-stream"
 cloudwatch_config_ssm_key = "cloudwatch-config"
+sns_topic_name            = "ivolve-sns-topic"
+sns_subscription_protocol = "email"
+sns_subscription_endpoint = "marwanhesham463@gmail.com"
 
 
