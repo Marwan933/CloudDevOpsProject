@@ -82,7 +82,8 @@ The Output Of Igw and Rt
 
 #### 4.1. main.tf file:
 
-<img width="714" alt="sgmarwan" src="https://github.com/user-attachments/assets/0de81013-1e37-43b9-8b57-5500a3d2fa1f" />
+<img width="684" alt="sggggg" src="https://github.com/user-attachments/assets/356e3f65-e22d-46c8-8fec-f6f7b2b8e59b" />
+
 
 
 #### 4.2. variables.tf file
