@@ -1,7 +1,7 @@
 region              = "us-east-1"
 s3_bucket_name      = "final-bukect-1"
 dynamodb_table_name = "ivolvegp-table"
-vpc_name            = "ivolve"
+vpc_name            = "ivolve-marwan"
 vpc_cidr            = "10.0.0.0/16"
 subnets = [
   {
@@ -32,7 +32,7 @@ security_group_rules = [
 ]
 ami_id               = "ami-0e2c8caa4b6378d8c"
 instance_type        = "t2.micro"
-ec2_name             = "ivolve"
+ec2_name             = "ivolve-marwan"
 cloudwatch_log_group  = "log-group"
 cloudwatch_log_stream = "log-stream"
 cloudwatch_config_ssm_key = "cloudwatch-config"
