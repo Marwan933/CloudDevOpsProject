@@ -60,3 +60,15 @@ variable "cloudwatch_log_stream" {
 variable "cloudwatch_config_ssm_key" {
   description = "The SSM key for CloudWatch agent configuration"
 }
+
+variable "sns_topic_name" {
+  description = "The name of the SNS topic"
+}
+
+variable "sns_subscription_protocol" {
+  description = "The protocol for the SNS subscription (e.g., email, lambda, sqs)"
+}
+
+variable "sns_subscription_endpoint" {
+  description = "The endpoint for the SNS subscription (e.g., email address, Lambda ARN, SQS ARN)"
+}
