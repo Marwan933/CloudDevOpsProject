@@ -60,5 +60,5 @@ resource "local_file" "ansible_inventory" {
     [slave]
     ${module.ec2_instance.public_ip} ansible_ssh_user=ubuntu 
   EOT
-  filename = "../ansible/inventory"
+  filename = "../Ansible-final-project/inventory"
 }
