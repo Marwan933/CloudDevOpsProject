@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: my-app-container
-        image: docker.io/marwanhesham90/project
+        image: docker.io/marwanhesham463/project-ivolve
         ports:
         - containerPort: 8082
 
