@@ -1,5 +1,5 @@
 region              = "us-east-1"
-s3_bucket_name      = "final-bukect-1"
+s3_bucket_name      = "final-bukect-2"
 dynamodb_table_name = "ivolvegp-table"
 vpc_name            = "ivolve-marwan"
 vpc_cidr            = "10.0.0.0/16"
@@ -31,6 +31,7 @@ security_group_rules = [
   }
 ]
 ami_id               = "ami-0e2c8caa4b6378d8c"
+key_name             = "ansible-key"
 instance_type        = "t3.xlarge"
 ec2_name             = "ivolve-marwan"
 cloudwatch_log_group  = "log-group"
