@@ -69,8 +69,8 @@
   become: true
   become_user: postgres
   postgresql_user:
-    name: 'sonar'
-    password: 'ivolve'
+    name: "{{ psql_sonar_username }}"
+    password: "{{ psql_sonar_password }}"
     role_attr_flags: CREATEDB,SUPERUSER,CREATEROLE
     encrypted: yes
     state: present
@@ -81,7 +81,7 @@
   become_user: postgres
   postgresql_db:
     name: sonar
-    owner: sonar
+    owner: "{{ psql_sonar_username }}"
     encoding: UTF8
     state: present
 
@@ -146,10 +146,10 @@
     path: /opt/sonarqube-9.9.1.69595/conf/sonar.properties
     state: present
     block: |
-      sonar.jdbc.username=sonar
-      sonar.jdbc.password=ivolve
+      sonar.jdbc.username={{ psql_sonar_username }}
+      sonar.jdbc.password={{ psql_sonar_password }}
       sonar.web.host=0.0.0.0
-      sonar.web.port=9000
+      sonar.web.port={{ sonar_web_port }}
       sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonar
       sonar.web.javaAdditionalOpts=-server
       sonar.log.level=INFO
@@ -168,8 +168,8 @@
       After=syslog.target network.target
       [Service]
       Type=forking
-      ExecStart=/opt/sonarqube-9.9.1.69595/bin/linux-x86-64/sonar.sh start
-      ExecStop=/opt/sonarqube-9.9.1.69595/bin/linux-x86-64/sonar.sh stop
+      ExecStart=/opt/{{ sonarqube_version }}/bin/linux-x86-64/sonar.sh start
+      ExecStop=/opt/{{ sonarqube_version }}/bin/linux-x86-64/sonar.sh stop
       User=sonar
       Group=sonar
       Restart=always
@@ -179,4 +179,19 @@
       WantedBy=multi-user.target
   notify:
     - Start Sonar
+- name: Start PostgreSQL
+  service:
+    name: postgresql
+    state: started
+    enabled: yes
 
+- name: Restart PostgreSQL
+  service:
+    name: postgresql
+    state: restarted
+
+- name: Start Sonar
+  systemd:
+    name: sonar
+    state: started
+    enabled: yes
