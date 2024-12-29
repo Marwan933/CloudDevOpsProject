@@ -2,7 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.6.3'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
-   id "org.sonarqube" version "4.3.0.3225" 
+    id "org.sonarqube" version "4.0.0.2929"
 }
 
 
@@ -35,7 +35,7 @@ sonarqube {
         property "sonar.projectName", "ivolve-marwan"
         property "sonar.host.url", "http://3.88.135.246:9000/" 
         property "sonar.login", "squ_8c963fbc089b392f7a1b3e9780fbc845ebfdbb97"
-         
+         property "sonar.reportPaths", "build/sonar/report-task.txt"
         
 
     }
