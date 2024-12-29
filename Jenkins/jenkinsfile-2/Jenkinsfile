@@ -3,6 +3,9 @@
 pipeline {
     agent  any 
 
+    tools {
+        gradle 'Gradle' // Ensure this matches your Jenkins setup
+    }
     environment {
         DOCKER_IMAGE = 'docker.io/marwanhesham463/project-ivolve'
         DEPLOYMENT_YAML = 'deployment.yaml'
