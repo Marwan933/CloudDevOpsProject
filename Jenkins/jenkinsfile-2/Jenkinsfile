@@ -1,7 +1,7 @@
 @Library('my-shared-library') _  // Load the shared library
 
 pipeline {
-    agent { label 'jenkins-slave' }
+    agent { any }
 
     environment {
         DOCKER_IMAGE = 'docker.io/marwanhesham463/project-ivolve'
