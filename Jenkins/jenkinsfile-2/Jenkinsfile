@@ -1,10 +1,10 @@
 @Library('my-shared-library') _  // Load the shared library
 
 pipeline {
-    agent { label 'ansible-test' }
+    agent { label 'jenkins-slave' }
 
     environment {
-        DOCKER_IMAGE = 'docker.io/ahmedmaher07/project'
+        DOCKER_IMAGE = 'docker.io/ahmedmaher08/project'
         DEPLOYMENT_YAML = 'deployment.yaml'
         FINAL_PROJECT_DIR = 'FinalProjectCode-main'  // Define the directory for the project
     }
@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo "Cloning the source code from GitHub"
                 // Cloning the repository into the FinalProjectCode-main directory
-                git url: 'https://github.com/wolf452/CloudDevOpsProject.git', branch: 'main'
+                git url: 'https://github.com/Marwan933/CloudDevOpsProject.git', branch: 'main'
             }
         }
 
@@ -64,17 +64,17 @@ pipeline {
 
         stage('Deploy to Kubernetes') {
             steps {
-                deployStage('/home/ubuntu/jenkins/config', DEPLOYMENT_YAML)  // Calls the deployStage.groovy function
+                deployStage('/home/ubuntu/jenkins/.kube/config', 'FinalProjectCode-main/deployment.yaml') 
             }
         }
     }
 
     post {
         success {
-            echo "Pipeline executed successfully."
+            echo "Pipeline executed successfully...!"
         }
         failure {
-            echo "Pipeline failed. Please check the logs for details."
+            echo "Pipeline failed.."
         }
     }
 }
