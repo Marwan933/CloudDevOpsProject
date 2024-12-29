@@ -34,7 +34,7 @@ sonarqube {
         property "sonar.projectKey", "ivolve-marwan"  
         property "sonar.projectName", "ivolve-marwan"
         property "sonar.host.url", "http://3.88.135.246:9000/" 
-        property "sonar.login", "squ_8c963fbc089b392f7a1b3e9780fbc845ebfdbb97"
+        property "sonar.login", "squ_bd81c8aa719c9b0ab8b847b2b348934ff858d504"
          property "sonar.reportPaths", "build/sonar/report-task.txt"
         
 
