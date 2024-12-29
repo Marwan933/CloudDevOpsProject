@@ -1,10 +1,18 @@
+// vars/runAnsible.groovy
 def call() {
-    dir("${ANSIBLE_DIR}") {
-        ansiblePlaybook(
-            credentialsId: 'ansible-ssh',
-            inventory: "${INVENTORY_FILE}",
-            playbook: 'playbook.yml',
-            extras: '-e "ansible_ssh_extra_args=\'-o StrictHostKeyChecking=no\'"'
-        )
+    stage('Run Ansible') {
+        dir('Ansible-final-project') {
+            ansiblePlaybook(
+                credentialsId: 'ansible-ssh',
+                inventory: 'inventory',
+                playbook: 'playbook.yml',
+                extras: '-e "ansible_ssh_extra_args='-o StrictHostKeyChecking=no'"'
+            )
+            sh """
+                ls
+            """
+        }
     }
 }
+
+return this
