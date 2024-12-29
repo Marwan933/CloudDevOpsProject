@@ -5,6 +5,9 @@ This project contains an **Ansible Playbook** to install and configure the follo
 - **Docker**
 - **Jenkins**
 - **SonarQube**
+- **git**
+- **common**
+- **environment**
 - **Java OpenJDK 17**
 - **PostgreSQL** (for SonarQube)
 - **Other dependencies** such as package updates and permission setups
