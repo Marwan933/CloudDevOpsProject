@@ -1,7 +1,7 @@
 @Library('my-shared-library') _  // Load the shared library
 
 pipeline {
-    agent  any 
+    agent { label 'jenkins-slave' }
 
     tools {
         gradle 'Gradle' // Ensure this matches your Jenkins setup
