@@ -31,10 +31,10 @@ test {
 
 sonarqube {
     properties {
-        property "sonar.projectKey", "ivolve-marwan"  
-        property "sonar.projectName", "ivolve-marwan"
+        property "sonar.projectKey", "marwan-ivole"  
+        property "sonar.projectName", "marwan-ivole"
         property "sonar.host.url", "http://3.88.135.246:9000/" 
-        property "sonar.login", "squ_bd81c8aa719c9b0ab8b847b2b348934ff858d504"
+        property "sonar.login", "squ_55d07df3a938f19408f14a7b8b2a824ca73ea792"
          property "sonar.reportPaths", "build/sonar/report-task.txt"
         
 
